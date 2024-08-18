@@ -88,20 +88,19 @@ function MainPage() {
   return (
     <div>
      <div className='navBar'>
-        <a href="http://localhost:5173/"><h1>Hesap<span className='kitap'>Kitap</span></h1></a>
+       <a href="https://hesap-kitap.vercel.app"><h1>Hesap<span className='kitap'>Kitap</span></h1></a>
         <div className='menu'>
           <li>
             <a className='title'>Sağlık</a>
             <div className='nalt'>
-              <a href="http://localhost:5174?theme={isLightMode ? 'light' : 'dark'}">Boy Kilo Endeksi Hesap</a>
-              <a href="http://localhost:5175?theme={isLightMode ? 'light' : 'dark'}">Metobalizma Hızı Hesap</a>
-              <a href="">Günlük Su İhtiyacı Hesap</a>
+              <a href="https://boy-kilo-endeks.vercel.app">Boy Kilo Endeksi Hesap</a>
+              <a href="https://metabolizma-hesap.vercel.app">Metobalizma Hızı Hesap</a>
             </div>
           </li>
           <li>
             <a className='title'>Matematik</a>
             <div className='nalt'>
-              <a href="">Karekök Hesap</a>
+              <a href="">Yakında..</a>
             </div>
           </li>
         </div>
