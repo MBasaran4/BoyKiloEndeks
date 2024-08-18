@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+.light-mode{
+    --background-color: white;
+    --text-color: black;
+    --border-before-color: rgba(63, 63, 63, 0.39);
+    --border-after-color: #00A97F;
+    --input-hovered-color: #90eded27;
+    --button-color: #00A97F;
+    --cards-color: #dbdbdb;
+}
+.dark-mode{
+    --background-color:#081016;
+    --text-color: white;
+    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-after-color: #00A97F;
+    --input-hovered-color: #032f2443; 
+    --button-color: #00A97F;
+    --cards-color: black;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    font-family: "Urbanist", sans-serif;
+    background-color: var(--background-color);
+    transition: 0.3s ease-in-out;
+}
+.navBar{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border-bottom: 1px solid var(--border-before-color);
+  transition: .2s ease-in-out;
+}
+.navBar a{
+  text-decoration: none;
+}
+.navBar a h1{
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.kitap{
+  color: var(--button-color);
+}
+.navBar .menu{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+  transition: .2s ease-in-out;
+}
+
+.menu li{
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-weight: 300;
+  border:none;
+  background:transparent;
+  cursor: pointer;
+  height: 100%;
+  list-style-type: none;
+  transition: .2s ease-in-out;
+}
+.menu a{
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  transition: .1s ease-in-out;
+}
+.menu .title{
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+.menu .title:hover{
+  background-color: var(--button-color);
+}
+.menu .nalt{
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 70%;
+  left: 0%;
+  background-color: var(--button-color);
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  transition: .2s ease-in-out;
+}
+.nalt a{
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.nalt a:hover{
+  background-color: var(--input-hovered-color);
+}
+.menu li:hover .nalt{
+  display: flex;
+  transition: .2s ease-in-out;
+}
+
+
+.title{
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 50px;
+}
+label{
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+--width-of-input: 300px;
+--border-height: 1px;
+position: relative;
+width: var(--width-of-input);
+}
+/* styling of Input */
+.input {
+color: var(--text-color);
+font-size: 1.4rem;
+text-align: center;
+background-color: transparent;
+width: 100%;
+margin-top: 10px;
+box-sizing: border-box;
+padding-inline: 0.5em;
+padding-block: 0.7em;
+border: none;
+border-bottom: var(--border-height) solid var(--border-before-color);
+}
+/* styling of animated border */ 
+.input-border {
+position: absolute;
+background: var(--border-after-color);
+width: 0%;
+height: 2px;
+bottom: 0;
+left: 0;
+transition: 0.3s;
+}
+/* Hover on Input */
+input:hover {
+background: var(--input-hovered-color);
+}
+input:focus {
+outline: none;
+}
+/* here is code of animated border */
+input:focus ~ .input-border {
+width: 100%;
+}
+/* === if you want to do animated border on typing === */
+/* remove input:focus code and uncomment below code */
+/* input:valid ~ .input-border{
+width: 100%;
+} */
+
+.button {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: 75px;
+padding: 0.8em 1.7em;
+background-color: transparent;
+border-radius: .3em;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+transition: .5s;
+font-weight: 400;
+font-size: 17px;
+border: 1px solid;
+font-family: inherit;
+font-size: 1.5rem;
+text-transform: uppercase;
+color: var(--button-color);
+z-index: 1;
+}
+
+.button::before, .button::after {
+content: '';
+display: block;
+width: 50px;
+height: 50px;
+transform: translate(-50%, -50%);
+position: absolute;
+border-radius: 50%;
+z-index: -1;
+background-color: var(--button-color);
+transition: 1s ease;
+}
+
+.button::before {
+top: -1em;
+left: -1em;
+}
+
+.button::after {
+left: calc(100% + 1em);
+top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+height: 410px;
+width: 410px;
+}
+
+.button:hover {
+color: rgb(10, 25, 30);
+}
+
+.button:active {
+filter: brightness(.8);
+}
+
+.sonuc{
+    color: var(--button-color);
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.theme-switch {
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    direction: rtl;
+    top: 13px;
+    right: 15px;
+  }
+  
+  #theme-checkbox {
+    display: none;
+  }
+  
+  #theme-checkbox + label {
+    /* change the font-size below to change the size of the switch button*/
+    font-size: 2rem;
+    height: 1em;
+    width: 2.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    background-color: #3a3a3a;
+    position: relative;
+  }
+  
+  #theme-checkbox:checked + label {
+    background-color: #cecece;
+  }
+  
+  #theme-checkbox + label:active {
+    transform: scale(0.85);
+    transition: transform 0.2s;
+  }
+  
+  #theme-checkbox + label div {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: inherit;
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    z-index: 10;
+    transition: 0.5s cubic-bezier(1, 0.33, 0.11, 1.34);
+    background-color: #272727;
+  }
+  
+  #theme-checkbox:checked + label div {
+    /* left: calc(2.5em - .8em - .1em); */
+    left: 1.6em;
+    background-color: var(--background-color);
+  }
+  
+  #theme-checkbox + label span {
+    display: flex;
+  }
+  
+  #theme-checkbox + label svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    padding: 0.15em;
+    box-sizing: border-box;
+  }
+  
+  #theme-checkbox + label span:first-of-type {
+    color: #cdcdcd;
+  }
+  
+  #theme-checkbox + label span:last-of-type {
+    color: #333333;
+  }
+  
+
+body {
+    --sb-track-color: var(--input-hovered-color);
+    --sb-thumb-color: #00a97f;
+    --sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 14px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border: 3px solid var(--input-hovered-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+    scrollbar-color: var(--sb-thumb-color)
+                    var(--sb-track-color);
+    }
+}
+.endBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+.endBar h2{
+  color: var(--button-color);
+  font-weight: 400;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.card1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  border: none;
+  background: var(--input-hovered-color);
+  border-radius: 5px;
+  box-shadow: rgba(22, 90, 16, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.card1 .instagram{
+  color: var(--text-color);
+  width: 35px;
+  height: 35px;
+}
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: var(--button-color);
+}
+.card1:hover .instagram {
+  fill: var(--background-color);
+}
+.card2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  border: none;
+  background: var(--input-hovered-color);
+  border-radius: 5px;
+  box-shadow: rgba(22, 90, 16, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.card2 .youtube{
+  color: var(--text-color);
+  width: 35px;
+  height: 35px;
+}
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: var(--button-color);
+}
+.card2:hover .youtube {
+  fill: var(--background-color);
+}
+.card3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  border: none;
+  background: var(--input-hovered-color);
+  border-radius: 5px;
+  box-shadow: rgba(22, 90, 16, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.card3 .twitter{
+  color: var(--text-color);
+  width: 35px;
+  height: 35px;
+}
+.card3:hover{
+  background-color: var(--button-color);
+  scale: 1.1;
+  cursor: pointer;
+}
+.card3:hover .twitter{
+  color: var(--background-color);
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(var(--background-color) calc(1*100%/6),var(--button-color) 0 calc(3*100%/6),var(--background-color) 0),
+            linear-gradient(var(--background-color) calc(2*100%/6),var(--button-color) 0 calc(4*100%/6),var(--background-color) 0),
+            linear-gradient(var(--background-color) calc(3*100%/6),var(--button-color) 0 calc(5*100%/6),var(--background-color) 0);
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+@keyframes matrix {
+  0% {
+    background-position: 0% 100%, 50% 100%, 100% 100%
+  }
+
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%
+  }
+}
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #00a97f; /* Green color for the spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  transition: .2s ease-in-out;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Optional: Customize the loader visibility */
+.loader {
+  margin-top: 20px;
+  display: none;
+}
+.loader.visible {
+  display: block;
+}
+/* Basic styles for your form and theme */
+.light-mode {
+  background-color: transparent;
+  color: #000;
+}
+.button:disabled {
+  background-color: var(--button-color);
+  cursor: not-allowed;
+}
+/* Theme switch styles */
+.theme-switch {
+  margin-bottom: 20px;
+}
