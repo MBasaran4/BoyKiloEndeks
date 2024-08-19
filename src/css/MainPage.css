@@ -518,3 +518,28 @@ body::-webkit-scrollbar-thumb {
 .theme-switch {
   margin-bottom: 20px;
 }
+@supports not selector(::-webkit-scrollbar) {
+  body {
+  scrollbar-color: var(--sb-thumb-color)
+                  var(--sb-track-color);
+  }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu li {
+      display: none;
+  }
+  .menu li a {
+      display: none;
+  }
+  .nalt {
+      display: none;
+  }
+}
