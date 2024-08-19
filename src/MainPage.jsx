@@ -3,6 +3,7 @@ import './css/MainPage.css'; // Assuming you have this CSS file for styling
 import { FaMoon } from "react-icons/fa6";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { FaInstagram , FaYoutube , FaTwitter} from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react"
 
 function MainPage() {
   const getThemeFromURL = () => {
@@ -87,6 +88,7 @@ function MainPage() {
 
   return (
     <div>
+      <Analytics/>
      <div className='navBar'>
        <a href="https://hesap-kitap.vercel.app"><h1>Hesap<span className='kitap'>Kitap</span></h1></a>
         <div className='menu'>
