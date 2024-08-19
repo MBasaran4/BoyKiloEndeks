@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+  --background-color: white;
+  --text-color: black;
+  --border-before-color: rgba(63, 63, 63, 0.39);
+  --border-after-color: #00A97F;
+  --input-hovered-color: #90eded27;
+  --button-color: #00A97F;
+  --cards-color: #dbdbdb;
+}
+
 .light-mode{
     --background-color: white;
     --text-color: black;
