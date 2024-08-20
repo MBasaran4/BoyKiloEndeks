@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MainPage.css'; // Assuming you have this CSS file for styling
 import { FaInstagram , FaYoutube , FaTwitter} from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react"
-import Navbar from '../../../hesapkitap/src/components/Navbar';
+import Navbar from './Navbar';
 
 function MainPage() {
   const [boy, setBoy] = useState('');
