@@ -63,7 +63,7 @@ function Navbar() {
                     <li>
                         <a className='title'>Sağlık</a>
                         <div className='nalt'>
-                            <a href="http://localhost:5174/">Boy Kilo Endeksi Hesap</a>
+                            <a href="https://boy-kilo-endeks.vercel.app">Boy Kilo Endeksi Hesap</a>
                             <a href="https://metabolizma-hesap.vercel.app">Metobalizma Hızı Hesap</a>
                         </div>
                     </li>
