@@ -70,7 +70,7 @@ function Navbar() {
                     <li>
                         <a className='title'>Matematik</a>
                         <div className='nalt'>
-                            <a href="">Yakında..</a>
+                            <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
                         </div>
                     </li>
                 </div>
@@ -88,7 +88,7 @@ function Navbar() {
                     <li>
                         <a className='mTitle' onClick={toggleNaltMatematik}>Matematik</a>
                         <div className={`mNalt ${isNaltOpenMatematik ? 'active' : ''}`}>
-                            <a href="">Yakında..</a>
+                            <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
                         </div>
                     </li>
                 </div>
