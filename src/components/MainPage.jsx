@@ -1,34 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './css/MainPage.css'; // Assuming you have this CSS file for styling
-import { FaMoon } from "react-icons/fa6";
-import { MdOutlineWbSunny } from "react-icons/md";
+import './MainPage.css'; // Assuming you have this CSS file for styling
 import { FaInstagram , FaYoutube , FaTwitter} from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react"
-import Navbar from '../../hesapkitap/src/components/Navbar';
+import Navbar from '../../../hesapkitap/src/components/Navbar';
 
 function MainPage() {
-  const getThemeFromURL = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const theme = urlParams.get('theme');
-    if (theme) {
-      localStorage.setItem('theme', theme);
-      return theme;
-    }
-    return localStorage.getItem('theme') || 'light';
-  };
-
-  const [isLightMode, setIsLightMode] = useState(getThemeFromURL() === 'light');
   const [boy, setBoy] = useState('');
   const [kilo, setKilo] = useState('');
   const [sonuc, setSonuc] = useState('');
   const [durum, setDurum] = useState('');
   const [normal, setNormal] = useState('');
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.toggle('light-mode', isLightMode);
-    document.body.classList.toggle('dark-mode', !isLightMode);
-  }, [isLightMode]);
 
   const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -76,17 +58,6 @@ function MainPage() {
       setNormal(`Kilonuzun olması gereken aralığı: ${min.toFixed(1)} - ${max.toFixed(1)}`);
     }
   };
-
-  const handleThemeChange = () => {
-    const newTheme = !isLightMode ? 'light' : 'dark';
-    setIsLightMode(!isLightMode);
-    localStorage.setItem('theme', newTheme);
-
-    const url = new URL(window.location);
-    url.searchParams.set('theme', newTheme);
-    window.history.replaceState({}, '', url);
-  };
-
   return (
     <div>
       <Analytics/>
