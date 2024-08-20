@@ -59,7 +59,7 @@ function MainPage() {
     }
   };
   return (
-    <div>
+    <>
       <Analytics/>
       <Navbar/>
       <h1 className='title'>BOY KİLO ENDEKSİ</h1>
@@ -106,21 +106,7 @@ function MainPage() {
         <div id="durum">{durum}</div>
         <div id="normal">{normal}</div>
       </div>
-      <div className='endBar'>
-        <h2>İletişim</h2>
-        <div className='main'>
-          <button className='card1'>
-            <FaInstagram className='instagram'/>
-          </button>
-          <button className='card2'>
-            <FaYoutube className='youtube'/>
-          </button>
-          <button className='card3'>
-            <FaTwitter className='twitter'/>
-          </button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
