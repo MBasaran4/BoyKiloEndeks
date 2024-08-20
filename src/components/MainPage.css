@@ -1,17 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-  --background-color: white;
-  --text-color: black;
-  --border-before-color: rgba(63, 63, 63, 0.39);
-  --border-after-color: #00A97F;
-  --input-hovered-color: #90eded27;
-  --button-color: #00A97F;
-  --cards-color: #dbdbdb;
-}
-
-.light-mode{
-    --background-color: white;
+body.light-mode{  
+    --background-color:white;
     --text-color: black;
     --border-before-color: rgba(63, 63, 63, 0.39);
     --border-after-color: #00A97F;
@@ -19,7 +9,7 @@
     --button-color: #00A97F;
     --cards-color: #dbdbdb;
 }
-.dark-mode{
+body.dark-mode{
     --background-color:#081016;
     --text-color: white;
     --border-before-color: rgba(221, 221, 221, 0.39);
@@ -28,105 +18,48 @@
     --button-color: #00A97F;
     --cards-color: black;
 }
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 body{
     font-family: "Urbanist", sans-serif;
     background-color: var(--background-color);
     transition: 0.3s ease-in-out;
-}
-.navBar{
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  width: 100%;
-  height: 50px;
-  background: transparent;
-  border-bottom: 1px solid var(--border-before-color);
-  transition: .2s ease-in-out;
-}
-.navBar a{
-  text-decoration: none;
-}
-.navBar a h1{
-  margin: 0;
-  margin-left: 20px;
-  margin-right: 20px;
-  box-sizing: border-box;
-  color: var(--text-color);
-  cursor: pointer;
-}
-.kitap{
-  color: var(--button-color);
-}
-.navBar .menu{
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 5px;
-  width: 100%;
-  height: 50px;
-  transition: .2s ease-in-out;
+
+    --sb-track-color: var(--input-hovered-color);
+    --sb-thumb-color: #00a97f;
+    --sb-size: 10px;
 }
 
-.menu li{
-  position: relative;
-  display: inline-block;
-  margin: 5px;
-  margin-left: 15px;
-  box-sizing: border-box;
-  color: var(--text-color);
-  font-weight: 300;
-  border:none;
-  background:transparent;
-  cursor: pointer;
-  height: 100%;
-  list-style-type: none;
-  transition: .2s ease-in-out;
-}
-.menu a{
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 18px;
-  transition: .1s ease-in-out;
-}
-.menu .title{
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-}
-.menu .title:hover{
-  background-color: var(--button-color);
-}
-.menu .nalt{
-  display: none;
-  position: absolute;
-  flex-direction: column;
-  top: 70%;
-  left: 0%;
-  background-color: var(--button-color);
-  padding: 10px;
-  border-radius: 0px 0px 10px 10px;
-  transition: .2s ease-in-out;
-}
-.nalt a{
-  padding: 5px;
-  border-radius: 5px;
-  white-space: nowrap;
-}
-.nalt a:hover{
-  background-color: var(--input-hovered-color);
-}
-.menu li:hover .nalt{
-  display: flex;
-  transition: .2s ease-in-out;
+body::-webkit-scrollbar {
+    width: var(--sb-size)
 }
 
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 14px;
+}
 
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border: 3px solid var(--input-hovered-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+    scrollbar-color: var(--sb-thumb-color)
+                    var(--sb-track-color);
+    }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .title{
     font-size: 3rem;
     color: var(--text-color);
@@ -259,107 +192,6 @@ filter: brightness(.8);
     align-items: center;
     text-align: center;
     margin-top: 50px;
-}
-
-.theme-switch {
-    position: absolute;
-    display: flex;
-    justify-content: right;
-    direction: rtl;
-    top: 13px;
-    right: 15px;
-  }
-  
-  #theme-checkbox {
-    display: none;
-  }
-  
-  #theme-checkbox + label {
-    /* change the font-size below to change the size of the switch button*/
-    font-size: 2rem;
-    height: 1em;
-    width: 2.5em;
-    border-radius: 0.25em;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    background-color: #3a3a3a;
-    position: relative;
-  }
-  
-  #theme-checkbox:checked + label {
-    background-color: #cecece;
-  }
-  
-  #theme-checkbox + label:active {
-    transform: scale(0.85);
-    transition: transform 0.2s;
-  }
-  
-  #theme-checkbox + label div {
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: inherit;
-    position: absolute;
-    top: 0.1em;
-    left: 0.1em;
-    z-index: 10;
-    transition: 0.5s cubic-bezier(1, 0.33, 0.11, 1.34);
-    background-color: #272727;
-  }
-  
-  #theme-checkbox:checked + label div {
-    /* left: calc(2.5em - .8em - .1em); */
-    left: 1.6em;
-    background-color: var(--background-color);
-  }
-  
-  #theme-checkbox + label span {
-    display: flex;
-  }
-  
-  #theme-checkbox + label svg {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-    padding: 0.15em;
-    box-sizing: border-box;
-  }
-  
-  #theme-checkbox + label span:first-of-type {
-    color: #cdcdcd;
-  }
-  
-  #theme-checkbox + label span:last-of-type {
-    color: #333333;
-  }
-  
-
-body {
-    --sb-track-color: var(--input-hovered-color);
-    --sb-thumb-color: #00a97f;
-    --sb-size: 10px;
-}
-
-body::-webkit-scrollbar {
-    width: var(--sb-size)
-}
-
-body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 14px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border: 3px solid var(--input-hovered-color);
-}
-
-@supports not selector(::-webkit-scrollbar) {
-    body {
-    scrollbar-color: var(--sb-thumb-color)
-                    var(--sb-track-color);
-    }
 }
 .endBar{
   display: flex;
@@ -528,19 +360,6 @@ body::-webkit-scrollbar-thumb {
 .theme-switch {
   margin-bottom: 20px;
 }
-@supports not selector(::-webkit-scrollbar) {
-  body {
-  scrollbar-color: var(--sb-thumb-color)
-                  var(--sb-track-color);
-  }
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
   .menu li {
