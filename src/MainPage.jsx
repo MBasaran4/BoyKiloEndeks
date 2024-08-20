@@ -4,6 +4,7 @@ import { FaMoon } from "react-icons/fa6";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { FaInstagram , FaYoutube , FaTwitter} from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react"
+import Navbar from '../../hesapkitap/src/components/Navbar';
 
 function MainPage() {
   const getThemeFromURL = () => {
@@ -89,41 +90,7 @@ function MainPage() {
   return (
     <div>
       <Analytics/>
-     <div className='navBar'>
-       <a href="https://hesap-kitap.vercel.app"><h1>Hesap<span className='kitap'>Kitap</span></h1></a>
-        <div className='menu'>
-          <li>
-            <a className='title'>Sağlık</a>
-            <div className='nalt'>
-              <a href="https://boy-kilo-endeks.vercel.app">Boy Kilo Endeksi Hesap</a>
-              <a href="https://metabolizma-hesap.vercel.app">Metobalizma Hızı Hesap</a>
-            </div>
-          </li>
-          <li>
-            <a className='title'>Matematik</a>
-            <div className='nalt'>
-              <a href="">Yakında..</a>
-            </div>
-          </li>
-        </div>
-        <div className="theme-switch">
-          <input
-            type="checkbox"
-            id="theme-checkbox"
-            checked={isLightMode}
-            onChange={handleThemeChange}
-          />
-          <label htmlFor="theme-checkbox">
-            <div></div>
-            <span>
-              <MdOutlineWbSunny/>
-            </span>
-            <span>
-              <FaMoon/>
-            </span>
-          </label>
-        </div>
-      </div>
+      <Navbar/>
       <h1 className='title'>BOY KİLO ENDEKSİ</h1>
       <form id="bkeForm">
         <div className="form">
