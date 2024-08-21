@@ -71,7 +71,7 @@ function Navbar() {
                         <a className='title'>Matematik</a>
                         <div className='nalt'>
                             <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
-                            <a href="https://hacim-hesap-o9mq.vercel.app">Hacim Hesaplama</a>
+                            <a href="https://hacim-hesap.vercel.app/">Hacim Hesaplama</a>
                         </div>
                     </li>
                 </div>
@@ -90,7 +90,7 @@ function Navbar() {
                         <a className='mTitle' onClick={toggleNaltMatematik}>Matematik</a>
                         <div className={`mNalt ${isNaltOpenMatematik ? 'active' : ''}`}>
                             <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
-                            <a href="https://hacim-hesap-o9mq.vercel.app">Hacim Hesaplama</a>
+                            <a href="https://hacim-hesap.vercel.app/">Hacim Hesaplama</a>
                         </div>
                     </li>
                 </div>
