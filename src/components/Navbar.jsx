@@ -21,6 +21,7 @@ function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isNaltOpenSaglik, setIsNaltOpenSaglik] = useState(false);
     const [isNaltOpenMatematik, setIsNaltOpenMatematik] = useState(false);
+    const [isNaltOpenZaman, setIsNaltOpenZaman] = useState(false);
     
     useEffect(() => {
         document.body.classList.toggle('light-mode', isLightMode);
@@ -45,11 +46,19 @@ function Navbar() {
     const toggleNaltSaglik = () => {
         setIsNaltOpenSaglik(!isNaltOpenSaglik);
         setIsNaltOpenMatematik(false); // Diğer alt menüyü kapatır
+        setIsNaltOpenZaman(false); // Diğer alt menüyü kapatır
     };
 
     const toggleNaltMatematik = () => {
         setIsNaltOpenMatematik(!isNaltOpenMatematik);
         setIsNaltOpenSaglik(false); // Diğer alt menüyü kapatır
+        setIsNaltOpenZaman(false); // Diğer alt menüyü kapatır
+    };
+
+    const toggleNaltZaman = () => {
+        setIsNaltOpenZaman(!isNaltOpenZaman);
+        setIsNaltOpenSaglik(false); // Diğer alt menüyü kapatır
+        setIsNaltOpenMatematik(false); // Diğer alt menüyü kapatır
     };
 
     return (
@@ -70,8 +79,14 @@ function Navbar() {
                     <li>
                         <a className='title'>Matematik</a>
                         <div className='nalt'>
-                            <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
-                            <a href="https://hacim-hesap.vercel.app/">Hacim Hesaplama</a>
+                            <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>   
+                            <a href="https://hacim-hesap.vercel.app/">Hacim Hesaplama</a> 
+                        </div>
+                    </li>
+                    <li>
+                        <a className='title'>Zaman</a>
+                        <div className='nalt'>
+                            <a href="https://yas-hesaplama-ten.vercel.app/">Yaş Hesaplama</a>
                         </div>
                     </li>
                 </div>
@@ -91,6 +106,12 @@ function Navbar() {
                         <div className={`mNalt ${isNaltOpenMatematik ? 'active' : ''}`}>
                             <a href="https://alan-hesaplama-omega.vercel.app">Alan Hesaplama</a>
                             <a href="https://hacim-hesap.vercel.app/">Hacim Hesaplama</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a className='mTitle' onClick={toggleNaltZaman}>Zaman</a>
+                        <div className={`mNalt ${isNaltOpenZaman ? 'active' : ''}`}>
+                            <a href="https://yas-hesaplama-ten.vercel.app/">Yaş Hesaplama</a>
                         </div>
                     </li>
                 </div>
